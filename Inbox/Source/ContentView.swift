@@ -12,6 +12,7 @@ struct ContentView: View {
     
     @State private var inboxItems: [NotificareDeviceInbox] = []
     @State private var unreadCount = 0
+    @State private var inboxLoaded = false
     
     init() {
         // Remove default separators
@@ -21,16 +22,21 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List {
-                    if unreadCount > 0 {
-                        Text("You have \(unreadCount) unread notifications")
-                        .font(.subheadline)
-                        .padding(.bottom)
-                    }
-                    
-                    ForEach (inboxItems, id: \.inboxId) { inboxItem in
-                        InboxItemView(inboxItem: inboxItem)
-                            .listRowInsets(EdgeInsets())
+                if inboxLoaded && inboxItems.isEmpty {
+                    Text("You have no notifications")
+                        .font(.headline)
+                } else {
+                    List {
+                        if unreadCount > 0 {
+                            Text("You have \(unreadCount) unread notifications")
+                                .font(.subheadline)
+                                .padding(.bottom)
+                        }
+                        
+                        ForEach (inboxItems, id: \.inboxId) { inboxItem in
+                            InboxItemView(inboxItem: inboxItem)
+                                .listRowInsets(EdgeInsets())
+                        }
                     }
                 }
             }
@@ -47,6 +53,7 @@ struct ContentView: View {
             
             self.inboxItems = items
             self.unreadCount = items.filter { !$0.opened }.count
+            self.inboxLoaded = true
         }
     }
 }
