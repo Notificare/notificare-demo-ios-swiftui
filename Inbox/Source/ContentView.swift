@@ -10,7 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    private let unreadCount = inboxItems.filter { !$0.read }.count
+    @State private var inboxItems: [NotificareDeviceInbox] = []
+    @State private var unreadCount = 0
     
     init() {
         // Remove default separators
@@ -27,13 +28,25 @@ struct ContentView: View {
                         .padding(.bottom)
                     }
                     
-                    ForEach (inboxItems, id: \.id) { inboxItem in
+                    ForEach (inboxItems, id: \.inboxId) { inboxItem in
                         InboxItemView(inboxItem: inboxItem)
                             .listRowInsets(EdgeInsets())
                     }
                 }
             }
             .navigationBarTitle("Inbox")
+        }
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name.UpdateInbox), perform: { _ in
+            self.updateInbox()
+        })
+    }
+    
+    private func updateInbox() {
+        NotificarePushLib.shared().inboxManager.fetchInbox { (response, error) in
+            guard let items = response as? [NotificareDeviceInbox] else { return }
+            
+            self.inboxItems = items
+            self.unreadCount = items.filter { !$0.opened }.count
         }
     }
 }

@@ -10,13 +10,17 @@ import SwiftUI
 
 struct InboxItemView: View {
     @Environment(\.imageCache) var cache: ImageCache
-    @State var inboxItem: InboxItem
+    @State var inboxItem: NotificareDeviceInbox
+    
+    private var attachmentUri: String? {
+        inboxItem.attachment?["uri"] as? String
+    }
     
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
-            if inboxItem.attachment != nil {
+            if attachmentUri != nil {
                 AsyncImage(
-                    url: URL(string: inboxItem.attachment!)!,
+                    url: URL(string: attachmentUri!)!,
                     cache: self.cache,
                     placeholder: attachmentPlaceholder,
                     errorPlaceholder: attachmentErrorPlaceholder,
@@ -26,14 +30,14 @@ struct InboxItemView: View {
                             .frame(width: 80, height: 60)
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                             .overlay(RoundedRectangle(cornerRadius: 8).stroke(self.inboxItem.color, lineWidth: 2))
-                }
+                    }
                 )
             } else {
                 itemIndicator
             }
             
             VStack(alignment: .leading) {
-                Text(inboxItem.title)
+                Text(inboxItem.title ?? "---")
                     .font(.headline)
                     .lineLimit(1)
                     .truncationMode(.tail)
@@ -49,11 +53,11 @@ struct InboxItemView: View {
             Spacer()
             
             VStack {
-                Text(Date(fromIso8601String: inboxItem.receivedAt)!.timeAgo)
+                Text(Date(fromIso8601String: inboxItem.time)!.timeAgo)
                     .font(.caption)
                     .opacity(0.54)
                 
-                if !inboxItem.read {
+                if !inboxItem.opened {
                     Text("")
                         .frame(width: 8, height: 8)
                         .background(Color.blue)
@@ -92,6 +96,12 @@ struct InboxItemView: View {
 
 struct InboxItemView_Previews: PreviewProvider {
     static var previews: some View {
-        InboxItemView(inboxItem: inboxItems[0])
+        let item = NotificareDeviceInbox()
+        item.title = "Proin at nibh vitae dui hendrerit laoreet."
+        item.message = "Ut at mi nec dolor accumsan vestibulum eget in elit. Fusce gravida urna suscipit, tincidunt dui eget, mollis orci."
+        item.attachment = ["uri": "https://i.picsum.photos/id/100/160/120.jpg"]
+        item.time = "2020-05-13T09:28:25.080Z"
+        
+        return InboxItemView(inboxItem: item)
     }
 }
