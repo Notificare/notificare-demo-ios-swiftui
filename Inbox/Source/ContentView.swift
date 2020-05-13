@@ -42,6 +42,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("Inbox")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onReceive(NotificationCenter.default.publisher(for: Notification.Name.UpdateInbox), perform: { _ in
             self.updateInbox()
         })
