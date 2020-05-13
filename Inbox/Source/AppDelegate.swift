@@ -9,12 +9,16 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, NotificarePushLibDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        NotificarePushLib.shared().delegate = self
+        NotificarePushLib.shared().launch()
+        
         return true
     }
 
@@ -32,6 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    // MARK: Notificare
+    
+    func notificarePushLib(_ library: NotificarePushLib, onReady application: NotificareApplication) {
+        //At this point you have been assigned a temporary device identifier
+        //All services subscribed can be used
+    }
 }
-

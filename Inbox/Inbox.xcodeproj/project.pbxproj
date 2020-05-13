@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D387DCCB3DEF2F74AE6AEB4 /* Pods_Inbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADE0114B12E2DDD5318B069 /* Pods_Inbox.framework */; };
 		F25B759B246B2B6F00E8314B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B759A246B2B6F00E8314B /* AppDelegate.swift */; };
 		F25B759D246B2B6F00E8314B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B759C246B2B6F00E8314B /* SceneDelegate.swift */; };
 		F25B759F246B2B6F00E8314B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B759E246B2B6F00E8314B /* ContentView.swift */; };
@@ -23,9 +24,14 @@
 		F25B75C0246B2D8A00E8314B /* InboxItem+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B75BF246B2D8A00E8314B /* InboxItem+Color.swift */; };
 		F25B75C2246B2DB800E8314B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B75C1246B2DB800E8314B /* Date.swift */; };
 		F25B75C4246B3E7900E8314B /* InboxItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B75C3246B3E7900E8314B /* InboxItemView.swift */; };
+		F2AE865F246BED500088671B /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2AE865E246BED500088671B /* PassKit.framework */; };
+		F2AE8661246BED570088671B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2AE8660246BED570088671B /* StoreKit.framework */; };
+		F2AE8663246BEE380088671B /* Notificare.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2AE8662246BEE380088671B /* Notificare.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C05790CEFA0A47249CF973D /* Pods-Inbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inbox.release.xcconfig"; path = "Target Support Files/Pods-Inbox/Pods-Inbox.release.xcconfig"; sourceTree = "<group>"; };
+		6ADE0114B12E2DDD5318B069 /* Pods_Inbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25B7597246B2B6F00E8314B /* Inbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25B759A246B2B6F00E8314B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F25B759C246B2B6F00E8314B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +50,12 @@
 		F25B75BF246B2D8A00E8314B /* InboxItem+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InboxItem+Color.swift"; sourceTree = "<group>"; };
 		F25B75C1246B2DB800E8314B /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		F25B75C3246B3E7900E8314B /* InboxItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxItemView.swift; sourceTree = "<group>"; };
+		F2AE8659246BECFA0088671B /* Inbox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Inbox-Bridging-Header.h"; sourceTree = "<group>"; };
+		F2AE865D246BED350088671B /* Inbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Inbox.entitlements; sourceTree = "<group>"; };
+		F2AE865E246BED500088671B /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		F2AE8660246BED570088671B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F2AE8662246BEE380088671B /* Notificare.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Notificare.plist; sourceTree = "<group>"; };
+		FF03F53EA97F46C34EE48DE6 /* Pods-Inbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inbox.debug.xcconfig"; path = "Target Support Files/Pods-Inbox/Pods-Inbox.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +63,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2AE8661246BED570088671B /* StoreKit.framework in Frameworks */,
+				F2AE865F246BED500088671B /* PassKit.framework in Frameworks */,
+				6D387DCCB3DEF2F74AE6AEB4 /* Pods_Inbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2F22C9EDE3F4C2DA9BDE685 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF03F53EA97F46C34EE48DE6 /* Pods-Inbox.debug.xcconfig */,
+				1C05790CEFA0A47249CF973D /* Pods-Inbox.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CF0589CE7C3649F4E86BFF73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE8660246BED570088671B /* StoreKit.framework */,
+				F2AE865E246BED500088671B /* PassKit.framework */,
+				6ADE0114B12E2DDD5318B069 /* Pods_Inbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F25B758E246B2B6F00E8314B = {
 			isa = PBXGroup;
 			children = (
+				F2AE865D246BED350088671B /* Inbox.entitlements */,
 				F25B7599246B2B6F00E8314B /* Source */,
 				F25B7598246B2B6F00E8314B /* Products */,
+				C2F22C9EDE3F4C2DA9BDE685 /* Pods */,
+				CF0589CE7C3649F4E86BFF73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,8 +122,10 @@
 				F25B75A0246B2B7000E8314B /* Assets.xcassets */,
 				F25B75A5246B2B7000E8314B /* LaunchScreen.storyboard */,
 				F25B75A8246B2B7000E8314B /* Info.plist */,
+				F2AE8662246BEE380088671B /* Notificare.plist */,
 				F25B75A2246B2B7000E8314B /* Preview Content */,
 				F25B75C3246B3E7900E8314B /* InboxItemView.swift */,
+				F2AE8659246BECFA0088671B /* Inbox-Bridging-Header.h */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -136,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F25B75AB246B2B7000E8314B /* Build configuration list for PBXNativeTarget "Inbox" */;
 			buildPhases = (
+				58EDCBC58CE123ADE8E7CA35 /* [CP] Check Pods Manifest.lock */,
 				F25B7593246B2B6F00E8314B /* Sources */,
 				F25B7594246B2B6F00E8314B /* Frameworks */,
 				F25B7595246B2B6F00E8314B /* Resources */,
+				6B4B44938BEA6A1D0220B3F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,6 +202,7 @@
 				TargetAttributes = {
 					F25B7596246B2B6F00E8314B = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -187,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2AE8663246BEE380088671B /* Notificare.plist in Resources */,
 				F25B75A7246B2B7000E8314B /* LaunchScreen.storyboard in Resources */,
 				F25B75B4246B2C9800E8314B /* sample-data.json in Resources */,
 				F25B75A4246B2B7000E8314B /* Preview Assets.xcassets in Resources */,
@@ -195,6 +238,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58EDCBC58CE123ADE8E7CA35 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Inbox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B4B44938BEA6A1D0220B3F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Inbox/Pods-Inbox-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Inbox/Pods-Inbox-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Inbox/Pods-Inbox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F25B7593246B2B6F00E8314B /* Sources */ = {
@@ -346,10 +431,14 @@
 		};
 		F25B75AC246B2B7000E8314B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF03F53EA97F46C34EE48DE6 /* Pods-Inbox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Inbox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Source/Preview Content\"";
+				DEVELOPMENT_TEAM = Y47BY73NFN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +447,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = re.notifica.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Inbox-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,10 +456,14 @@
 		};
 		F25B75AD246B2B7000E8314B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C05790CEFA0A47249CF973D /* Pods-Inbox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Inbox.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Source/Preview Content\"";
+				DEVELOPMENT_TEAM = Y47BY73NFN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -377,6 +472,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = re.notifica.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Inbox-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
