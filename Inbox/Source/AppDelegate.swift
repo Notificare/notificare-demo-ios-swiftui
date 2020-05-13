@@ -40,7 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificarePushLibDelegate
     // MARK: Notificare
     
     func notificarePushLib(_ library: NotificarePushLib, onReady application: NotificareApplication) {
-        //At this point you have been assigned a temporary device identifier
-        //All services subscribed can be used
+        // At this point you have been assigned a temporary device identifier
+        // All services subscribed can be used
+        
+        NotificarePushLib.shared().registerForNotifications()
     }
 }
