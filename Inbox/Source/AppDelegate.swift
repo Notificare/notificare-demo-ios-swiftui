@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificarePushLibDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        NotificarePushLib.shared().initialize(withKey: nil, andSecret: nil)
         NotificarePushLib.shared().delegate = self
         NotificarePushLib.shared().launch()
         
