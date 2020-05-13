@@ -45,4 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificarePushLibDelegate
         
         NotificarePushLib.shared().registerForNotifications()
     }
+    
+    func notificarePushLib(_ library: NotificarePushLib, didLoadInbox items: [NotificareDeviceInbox]) {
+        NotificationCenter.default.post(name: Notification.Name.UpdateInbox, object: nil)
+    }
+    
+    func notificarePushLib(_ library: NotificarePushLib, didReceiveRemoteNotificationInForeground notification: NotificareNotification, withController controller: Any?) {
+        NotificationCenter.default.post(name: Notification.Name.UpdateInbox, object: nil)
+    }
 }

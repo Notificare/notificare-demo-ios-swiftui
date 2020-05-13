@@ -27,6 +27,7 @@
 		F2AE865F246BED500088671B /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2AE865E246BED500088671B /* PassKit.framework */; };
 		F2AE8661246BED570088671B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2AE8660246BED570088671B /* StoreKit.framework */; };
 		F2AE8663246BEE380088671B /* Notificare.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2AE8662246BEE380088671B /* Notificare.plist */; };
+		F2AE8665246C005A0088671B /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE8664246C005A0088671B /* NotificationName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		F2AE865E246BED500088671B /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		F2AE8660246BED570088671B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F2AE8662246BEE380088671B /* Notificare.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Notificare.plist; sourceTree = "<group>"; };
+		F2AE8664246C005A0088671B /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		FF03F53EA97F46C34EE48DE6 /* Pods-Inbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inbox.debug.xcconfig"; path = "Target Support Files/Pods-Inbox/Pods-Inbox.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 			children = (
 				F25B75BF246B2D8A00E8314B /* InboxItem+Color.swift */,
 				F25B75C1246B2DB800E8314B /* Date.swift */,
+				F2AE8664246C005A0088671B /* NotificationName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				F25B75BB246B2D1B00E8314B /* ImageCache.swift in Sources */,
 				F25B75B9246B2CED00E8314B /* EnvironmentValues+ImageCache.swift in Sources */,
 				F25B759D246B2B6F00E8314B /* SceneDelegate.swift in Sources */,
+				F2AE8665246C005A0088671B /* NotificationName.swift in Sources */,
 				F25B75BD246B2D3100E8314B /* ImageLoader.swift in Sources */,
 				F25B75B2246B2C6B00E8314B /* SampleData.swift in Sources */,
 				F25B75B7246B2CD900E8314B /* AsyncImage.swift in Sources */,
