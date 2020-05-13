@@ -11,7 +11,10 @@ import Foundation
 extension Date {
     
     init?(fromIso8601String str: String) {
-        guard let date = ISO8601DateFormatter().date(from: str) else { return nil }
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        
+        guard let date = formatter.date(from: str) else { return nil }
         self = date
     }
 }
