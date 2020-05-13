@@ -18,3 +18,15 @@ extension InboxItem {
         return Color(red: Double(r) / 255, green: Double(g) / 255, blue: Double(b) / 255)
     }
 }
+
+
+extension NotificareDeviceInbox {
+    
+    var color: Color {
+        let r = Int.random(in: 0...255)
+        let g = Int.random(in: 0...255)
+        let b = Int.random(in: 0...255)
+        
+        return Color(red: Double(r) / 255, green: Double(g) / 255, blue: Double(b) / 255)
+    }
+}
