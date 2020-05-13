@@ -36,6 +36,16 @@ struct ContentView: View {
                         ForEach (inboxItems, id: \.inboxId) { inboxItem in
                             InboxItemView(inboxItem: inboxItem)
                                 .listRowInsets(EdgeInsets())
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    guard let navigationController = self.findNavigationViewController() else { return }
+                                    
+                                    NotificarePushLib.shared().inboxManager.openInboxItem(inboxItem) { (response, error) in
+                                        guard error == nil, let response = response else { return }
+                                        
+                                        NotificarePushLib.shared().presentInboxItem(inboxItem, in: navigationController, withController: response)
+                                    }
+                                }
                         }
                     }
                 }
@@ -55,6 +65,30 @@ struct ContentView: View {
             self.inboxItems = items
             self.unreadCount = items.filter { !$0.opened }.count
             self.inboxLoaded = true
+        }
+    }
+    
+    private func findNavigationViewController(from controller: UIViewController? = nil) -> UINavigationController? {
+        guard let controller = controller else {
+            let keyWindows = UIApplication.shared.windows.filter { $0.isKeyWindow }
+            guard let window = keyWindows.first, let controller = window.rootViewController else {
+                return nil
+            }
+            
+            return findNavigationViewController(from: controller)
+        }
+
+        switch controller {
+        case let hosting as UIHostingController<ContentView>:
+            guard let last = hosting.presentationController?.presentedViewController.children.last else { return nil }
+            return findNavigationViewController(from: last)
+        case let split as UISplitViewController:
+            guard let last = split.viewControllers.last else { return nil }
+            return findNavigationViewController(from: last)
+        case let navigation as UINavigationController:
+            return navigation
+        default:
+            return nil
         }
     }
 }

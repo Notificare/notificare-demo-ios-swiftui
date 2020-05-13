@@ -10,7 +10,7 @@ import SwiftUI
 
 struct InboxItemView: View {
     @Environment(\.imageCache) var cache: ImageCache
-    @State var inboxItem: NotificareDeviceInbox
+    var inboxItem: NotificareDeviceInbox
     
     private var attachmentUri: String? {
         inboxItem.attachment?["uri"] as? String
