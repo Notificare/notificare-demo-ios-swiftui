@@ -122,4 +122,4 @@ for i in range(len(notifications)):
       }
     ]
 
-  requests.post(url, auth=(appId, appMasterSecret), headers=headers, data=json.dumps(payload))
+  requests.post(url, auth=(applicationKey, applicationMasterSecret), headers=headers, data=json.dumps(payload))
